@@ -30,7 +30,7 @@
      ![selfhostedinstallfinished](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/9e60328e-276d-4944-8675-8c8415467fa9)
 
 
-   - In the same Manage tab click on 'Linked Service' and create all Linked Service needed in our pipeline - for Databricks Linked Service we'll need a token generated with this instructions - https://docs.databricks.com/en/dev-tools/auth/pat.html#:~:text=In%20your%20Databricks%20workspace%2C%20click,Click%20Generate%20new%20token. and stored in the Key Vault as you could see in the previous screenshot (dbwtoken):
+   - In the same Manage tab click on 'Linked Service' and create all Linked Services needed in our pipeline - for Databricks Linked Service we'll need a token generated with this instructions - https://docs.databricks.com/en/dev-tools/auth/pat.html#:~:text=In%20your%20Databricks%20workspace%2C%20click,Click%20Generate%20new%20token. and stored in the Key Vault as you could see in the previous screenshot (dbwtoken):
   
      ![Azure Databricks linked service1](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/16ec2f81-8e1d-4011-89e0-63183dd818ac)
      ![Azure databricks linked service2](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/c90e4455-d639-40e8-ba2b-61a41273806f)
@@ -53,10 +53,80 @@
      ![sqlServerCopy datasets](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/551b6e79-8599-4cf9-a0f9-4cf76b063e07)
      ![sqldbtables datasets](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/9596b13a-4d11-4ec8-ab4c-64c1ba4f56c9)
 
-   4. Transform the data in the Databricks notebooks:
+4. Transform the data in the Databricks notebooks:
 
-      - ![Screenshot_25](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/7a178fdb-d681-42d8-b355-102b48e3800b)
-      - 
+   - Create a Spark cluster in the Compute tab:
+
+     ![Screenshot_26](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/37b36ce5-7e9a-4161-8516-ac79886a88bd)
+
+   - Create 3 notebooks and write the code in the cells as you see here:
+     
+     ![Screenshot_25](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/7a178fdb-d681-42d8-b355-102b48e3800b)
+     ![databricksstorageamount1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/a886be15-cc16-4045-9d51-cc03fda3a0ad)
+     ![databricksstorageamount2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/1c9f303f-dc7d-4e02-a29c-72db644549bc)
+     ![databrickbronzetosilver1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/06223100-39f6-45ed-be0b-805951064db2)
+     ![databricksbronzetosilver2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/5392be18-9184-4e6e-a0bd-ef2f0aeb74cc)
+     ![databrickssilvertogold1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/72d37ef3-ab1e-4fe7-857a-fe377daa9c20)
+     ![databrickssilvertogold2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/72e021a5-83f0-4722-bc24-36e665713d28)
+     ![databrickssilvertogold3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/dd53e064-b7fd-44a0-9488-cceafd84b4ac)
+
+
+6. Create the pipeline:
+
+   - go to the Author tab and create new pipeline using next activities: Lookup (in the Settings use this Query:
+     "SELECT
+     s.name as SchemaName,
+     t.name as TableName
+     FROM sys.tables t
+     INNER JOIN sys.schemas s
+     ON t.schema_id = s.schema_id
+     WHERE s.name LIKE 'SalesLT'"), ForEach (Copy data inside), 2x Databricks Notebook with the next set ups:
+
+     ![lookforalltablesactivity2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/26e289bd-c08b-43fe-826e-884350f5d536)
+     ![for each1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/c723e824-9895-40ff-8b0e-8bdf010ca28c)
+     ![foreach2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/3745864c-8a7a-4ea5-9baf-3a313dbaa443)
+     ![copyeach1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/57a277be-33d7-4383-9d4c-f2cb48b7b6e4)
+     ![copyeach2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/845a30b9-e852-4ef3-8c7b-15ead00d2049)
+     ![copyeach3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/891d4e5c-1041-4e40-886c-904630c95520)
+     ![bronzetosilver1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/3390aa6e-e92a-4744-9c44-15c4b0b2265b)
+     ![bronzetosilver2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/751acb23-830a-4a8a-94e3-86a328da3b8f)
+     ![bronzetosilver3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/df7dfae9-5c4d-4c38-86c9-4723dc7c3937)
+     ![silvertogold1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/372ae6a9-7ebb-4912-bfed-e6dd7dfa12a5)
+     ![silvertogold2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/832688c9-bc1f-4612-ac63-da9c7ac717bf)
+     ![silvertogold3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/a9f4fbfa-dab7-4d89-943b-fc24d04a52d7)
+
+7. Security:
+
+   - In the Azure Portal go to Microsoft entra ID resource and create new security group so every new member of the group will automatically has access to all created resources inside our resource group:
+
+     ![azureAD1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/48f58543-42ff-4e2f-b91e-e0019787d5a3)
+     ![azureAD2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/4e4c7f4e-f2ef-459b-9296-48a18b296398)
+
+8. Creating Power Bi report:
+
+   - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
