@@ -15,7 +15,7 @@
      ![Screenshot_6](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/38549189-857c-4267-b8fb-a0646dd65fb9)
      ![Screenshot_7](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/c4956e17-339b-40ce-8d61-b1534bb8baf8)
 
-   - Create new user and login in SSMS (assign db_datareader role by right-clicking at your user in the Security -> Users tab) and genereate 'username' and 'password' secrets in the Key Vault with the same values as in your DB:
+   - Create new user and login in SSMS (assign db_datareader role by right-clicking at your user's in the Security -> Users tab) and genereate 'username' and 'password' secrets in the Key Vault with the same values as in your DB:
 
      ![Screenshot_8](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/4b3a5005-138b-498c-a933-48b44340fd4e)
      ![Screenshot_9](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/89ad67e6-1813-4120-9172-910ae487449e)
