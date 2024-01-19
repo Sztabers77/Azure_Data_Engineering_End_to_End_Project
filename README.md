@@ -1,13 +1,11 @@
 # Azure_Data_Engineering_Project
 
-  1.  # Architecture of the project:
-    
+ # 1. Architecture of the project:
 
-    ![Screenshot_24](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/494cc284-ef9b-48ac-86c5-e8300bc2f479)
-
+   ![Screenshot_24](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/9652eae5-fd32-4d70-bd19-187e1b8e383c)
 
 
-# 2.  Environment setup:
+ # 2.  Environment setup:
    - Create resource group and all needed resources within: Data Factory, Databricks, Key Vault, Data Lake Gen 2, Synapse Analytics (https://learn.microsoft.com/en-us/azure/developer/intro/azure-developer-create-resources):
 
      ![Screenshot_5](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/0f192f32-c6ca-4a5b-b1b1-e8dfcf4c1aae)
