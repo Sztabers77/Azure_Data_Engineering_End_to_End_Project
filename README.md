@@ -20,7 +20,7 @@
      ![Screenshot_8](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/4b3a5005-138b-498c-a933-48b44340fd4e)
      ![Screenshot_9](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/89ad67e6-1813-4120-9172-910ae487449e)
 
-3. # Prerequistes to create the pipeline:
+#  3. Prerequistes to create the pipeline:
    - Launch Data Factory studio and following this steps - Manage tab -> Integration Runtime -> New - install Self-Hosted Integration Runtime feature with which we can connect with our on-prem SQL server installed in the previous step:
   
      ![Screenshot_10](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/51095d3d-d4b4-41f7-955e-b6133e4ebdb2)
@@ -53,7 +53,7 @@
      ![sqlServerCopy datasets](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/551b6e79-8599-4cf9-a0f9-4cf76b063e07)
      ![sqldbtables datasets](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/9596b13a-4d11-4ec8-ab4c-64c1ba4f56c9)
 
-4. Transform the data in the Databricks notebooks:
+#  4. Transform the data in the Databricks notebooks:
 
    - Create a Spark cluster in the Compute tab:
 
@@ -71,7 +71,7 @@
      ![databrickssilvertogold3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/dd53e064-b7fd-44a0-9488-cceafd84b4ac)
 
 
-6. Create the pipeline:
+#  5. Create the pipeline:
 
    - go to the Author tab and create new pipeline using next activities: Lookup (in the Settings use this Query:
      "SELECT
@@ -96,7 +96,7 @@
      ![silvertogold3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/a9f4fbfa-dab7-4d89-943b-fc24d04a52d7)
 
 
-7. Data loading in the Synapse workspace:
+#  6. Data loading in the Synapse workspace:
 
    - Open Synapse Analytics, go to the Data tab, click on the plus sign and create new serverless SQL Database:
 
@@ -105,28 +105,54 @@
      ![synapse3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/01c06a53-30f0-42db-85c5-1c279fe852dd)
 
 
-   - Go to Develop tab and click on the plus sign -> create new SQL script and write down this stored procedure which creates views stored in the newly created SQL database for every table in the gold container in our data lake using delta format:
+   - Go to the Develop tab and click on the plus sign to create a new SQL script. Write down this stored procedure, which we'll use in a pipeline to dynamically create views. These views will be stored in the newly created SQL database for every table in the gold container in our data lake using delta format.
 
      ![synapse4](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/0125b219-3d4a-4a2d-8333-fb001dc9d53a)
      ![synapse5](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/defe4b50-daaa-40cb-a20b-f0a3b3e83300)
-     ![synapse6](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/4830755b-9e39-4517-8c40-8e12c00912c4)
 
-     
+  - Go to the Manage tab and create new linked service to connect with serverless DB (use Serverless SQL endpoint in Synapse properties to establish domain name):
 
+    ![synapse7](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/f8c155c2-a8e1-4cc2-8ef0-8ccfa7aed834)
+    ![synapse9](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/87453da4-faeb-4306-9e15-0202874770fd)
+    ![synapse10](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/830ab2cf-3f13-47b2-beb9-4476d78dd503)
 
+  - Go to the Integrate tab and create a pipeline to create the views using stored procedure created before:
 
-
-
-9. Security:
+    ![synapse11](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/1ec15ebf-9a01-4dd0-aca8-0f57f054d845)
+    ![synapse12](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/44a0f7cb-8021-45c0-9384-be57170de813)
+    ![synapse13](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/e29f0664-ad31-49e0-87ca-c8c4c5a1b125)
+    ![synapse14](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/50bd33ab-dec6-4c8c-8e06-c9377d5a0ebc)
+    ![synapse15](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/5a3bc613-4eea-465e-b95f-61f668aecbf2)
+    ![synapse16](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/bb1e7461-0d2c-4a1e-aeaf-b34a1bafbe4a)
+    
+# 7. Security:
 
    - In the Azure Portal go to Microsoft entra ID resource and create new security group so every new member of the group will automatically has access to all created resources inside our resource group:
 
      ![azureAD1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/48f58543-42ff-4e2f-b91e-e0019787d5a3)
      ![azureAD2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/4e4c7f4e-f2ef-459b-9296-48a18b296398)
 
-10. Creating Power Bi report:
+# 8. Creating Power Bi report:
 
-   - In the Power Bi Desktop go to Get Data -> More -> Azure SQL Database
+   - In the Power Bi Desktop go to Get Data -> More -> Azure Synapse Analytics SQL -> fill the Server name with the same Serverless SQL endpoint in Synapse properties as we use earlier and the DB name with our database created in the Synapse workspace. Next follow the steps at the screenshots:
+
+     ![pbi1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/3c38f850-3bcc-4d0c-85fe-2488f8e69a07)
+     ![pbi2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/ae395398-34da-4e09-bec8-04ea757a629a)
+     ![pbi3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/9a42e40d-0aa2-4bf7-89c3-02a645d8cb7c)
+     ![pbi4](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/3d34f8c3-f896-45bf-a624-2f18b8f056e3)
+     ![pbi5](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/d7c6da80-4335-4783-a0b8-ebb24063470c)
+
+# 9. Testing:
+
+   - 
+
+
+     
+
+
+
+
+     
 
 
 
