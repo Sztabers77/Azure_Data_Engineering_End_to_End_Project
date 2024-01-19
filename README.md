@@ -2,7 +2,7 @@
 
 # 1. Architecture of the project:
 
-    ![Screenshot_24](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/494cc284-ef9b-48ac-86c5-e8300bc2f479)
+    ![Screenshot_24](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/494cc284-ef9b-48ac-86c5-e8300bc2f479)
 
 
 
