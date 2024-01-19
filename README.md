@@ -1,12 +1,13 @@
 # Azure_Data_Engineering_Project
 
- 1. # Architecture of the project:
+  1.  # Architecture of the project:
+    
 
     ![Screenshot_24](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/494cc284-ef9b-48ac-86c5-e8300bc2f479)
 
 
 
-2. Environment setup:
+# 2.  Environment setup:
    - Create resource group and all needed resources within: Data Factory, Databricks, Key Vault, Data Lake Gen 2, Synapse Analytics (https://learn.microsoft.com/en-us/azure/developer/intro/azure-developer-create-resources):
 
      ![Screenshot_5](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/0f192f32-c6ca-4a5b-b1b1-e8dfcf4c1aae)
@@ -21,7 +22,7 @@
      ![Screenshot_8](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/4b3a5005-138b-498c-a933-48b44340fd4e)
      ![Screenshot_9](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/89ad67e6-1813-4120-9172-910ae487449e)
 
-3. Prerequistes to create the pipeline:
+3. # Prerequistes to create the pipeline:
    - Launch Data Factory studio and following this steps - Manage tab -> Integration Runtime -> New - install Self-Hosted Integration Runtime feature with which we can connect with our on-prem SQL server installed in the previous step:
   
      ![Screenshot_10](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/51095d3d-d4b4-41f7-955e-b6133e4ebdb2)
