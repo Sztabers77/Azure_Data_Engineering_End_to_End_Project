@@ -98,14 +98,14 @@
 
 #  6. Data loading in the Synapse workspace:
 
-   - Open Synapse Analytics, go to the Data tab, click on the plus sign and create new serverless SQL Database:
+   - Open Synapse Analytics, go to the Data tab, click on the plus sign and create a new serverless SQL Database:
 
      ![synapse1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/c96d826e-3909-4b39-9a06-b2d5e200b02c)
      ![synapse2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/27256c8e-dc7f-4a48-a54b-c63f63989b39)
      ![synapse3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/01c06a53-30f0-42db-85c5-1c279fe852dd)
 
 
-   - Go to the Develop tab and click on the plus sign to create a new SQL script. Write down this stored procedure, which we'll use in a pipeline to dynamically create views. These views will be stored in the newly created SQL database for every table in the gold container in our data lake using delta format.
+   - Go to the Develop tab and click on the plus sign to create a new SQL script. Write down this stored procedure, which we'll use in the pipeline to dynamically create views. These views will be stored in the newly created SQL database for every table in the gold container in our data lake using delta format.
 
      ![synapse4](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/0125b219-3d4a-4a2d-8333-fb001dc9d53a)
      ![synapse5](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/defe4b50-daaa-40cb-a20b-f0a3b3e83300)
@@ -141,6 +141,11 @@
      ![pbi3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/9a42e40d-0aa2-4bf7-89c3-02a645d8cb7c)
      ![pbi4](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/3d34f8c3-f896-45bf-a624-2f18b8f056e3)
      ![pbi5](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/d7c6da80-4335-4783-a0b8-ebb24063470c)
+
+- After the data load create your custom report using charts, DAX and M languages:
+
+     ![pbi6](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/373aa491-5fb8-43eb-b009-aab3cd77e504)
+
 
 # 9. Testing:
 
