@@ -1,6 +1,6 @@
-# Azure_Data_Engineering_Project
+# # Azure_Data_Engineering_Project
 
-1. Architecture of the project:
+1. # Architecture of the project:
 
      ![Screenshot_24](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/91a5a7c3-dec5-42ce-85ef-7ce532bfd245)
 
@@ -95,16 +95,38 @@
      ![silvertogold2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/832688c9-bc1f-4612-ac63-da9c7ac717bf)
      ![silvertogold3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/a9f4fbfa-dab7-4d89-943b-fc24d04a52d7)
 
-7. Security:
+
+7. Data loading in the Synapse workspace:
+
+   - Open Synapse Analytics, go to the Data tab, click on the plus sign and create new serverless SQL Database:
+
+     ![synapse1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/c96d826e-3909-4b39-9a06-b2d5e200b02c)
+     ![synapse2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/27256c8e-dc7f-4a48-a54b-c63f63989b39)
+     ![synapse3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/01c06a53-30f0-42db-85c5-1c279fe852dd)
+
+
+   - Go to Develop tab and click on the plus sign -> create new SQL script and write down this stored procedure which creates views stored in the newly created SQL database for every table in the gold container in our data lake using delta format:
+
+     ![synapse4](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/0125b219-3d4a-4a2d-8333-fb001dc9d53a)
+     ![synapse5](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/defe4b50-daaa-40cb-a20b-f0a3b3e83300)
+     ![synapse6](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/4830755b-9e39-4517-8c40-8e12c00912c4)
+
+     
+
+
+
+
+
+9. Security:
 
    - In the Azure Portal go to Microsoft entra ID resource and create new security group so every new member of the group will automatically has access to all created resources inside our resource group:
 
      ![azureAD1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/48f58543-42ff-4e2f-b91e-e0019787d5a3)
      ![azureAD2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/4e4c7f4e-f2ef-459b-9296-48a18b296398)
 
-8. Creating Power Bi report:
+10. Creating Power Bi report:
 
-   - 
+   - In the Power Bi Desktop go to Get Data -> More -> Azure SQL Database
 
 
 
