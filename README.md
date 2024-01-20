@@ -104,8 +104,15 @@
      ![synapse2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/27256c8e-dc7f-4a48-a54b-c63f63989b39)
      ![synapse3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/01c06a53-30f0-42db-85c5-1c279fe852dd)
 
+   - In the same tab go to Linked property and create new Integration dataset:
 
-   - Go to the Develop tab and click on the plus sign to create a new SQL script. Write down this stored procedure, which we'll use in the pipeline to dynamically create views. These views will be stored in the newly created SQL database for every table in the gold container in our data lake using delta format.
+     ![1](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/a2230aa2-e7d9-4a24-bf58-983b30e4f4ba)
+     ![2](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/29c3c9e9-6128-43b2-bced-0caefc2f8c6c)
+     ![3](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/fdd2b948-0879-4d98-b14e-d3b6e0dad775)
+     ![5](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/8c0aca2e-e20e-48c7-9c55-a0a86fd868fb)
+     ![4](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/c80a8ee0-b4d6-444a-ba05-5f3130f3ecde)
+
+  - Go to the Develop tab and click on the plus sign to create a new SQL script. Write down this stored procedure, which we'll use in the pipeline to dynamically create views. These views will be stored in the newly created SQL database for every table in the gold container in our data lake using delta format.
 
      ![synapse4](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/0125b219-3d4a-4a2d-8333-fb001dc9d53a)
      ![synapse5](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/defe4b50-daaa-40cb-a20b-f0a3b3e83300)
