@@ -1,0 +1,67 @@
+{
+    "sku": {
+        "name": "Standard_RAGRS",
+        "tier": "Standard"
+    },
+    "kind": "StorageV2",
+    "id": "/subscriptions/2ca3571a-5d71-4515-a577-b7f3428ff0aa/resourceGroups/BSZS1001/providers/Microsoft.Storage/storageAccounts/bszdlg21001",
+    "name": "bszdlg21001",
+    "type": "Microsoft.Storage/storageAccounts",
+    "location": "uksouth",
+    "tags": {},
+    "properties": {
+        "keyCreationTime": {
+            "key1": "2024-01-15T18:01:16.1772612Z",
+            "key2": "2024-01-15T18:01:16.1772612Z"
+        },
+        "allowCrossTenantReplication": false,
+        "privateEndpointConnections": [],
+        "minimumTlsVersion": "TLS1_2",
+        "allowBlobPublicAccess": false,
+        "isHnsEnabled": true,
+        "networkAcls": {
+            "bypass": "AzureServices",
+            "virtualNetworkRules": [],
+            "ipRules": [],
+            "defaultAction": "Allow"
+        },
+        "supportsHttpsTrafficOnly": true,
+        "encryption": {
+            "services": {
+                "file": {
+                    "keyType": "Account",
+                    "enabled": true,
+                    "lastEnabledTime": "2024-01-15T18:01:16.4116648Z"
+                },
+                "blob": {
+                    "keyType": "Account",
+                    "enabled": true,
+                    "lastEnabledTime": "2024-01-15T18:01:16.4116648Z"
+                }
+            },
+            "keySource": "Microsoft.Storage"
+        },
+        "accessTier": "Hot",
+        "provisioningState": "Succeeded",
+        "creationTime": "2024-01-15T18:01:16.1147954Z",
+        "primaryEndpoints": {
+            "dfs": "https://bszdlg21001.dfs.core.windows.net/",
+            "web": "https://bszdlg21001.z33.web.core.windows.net/",
+            "blob": "https://bszdlg21001.blob.core.windows.net/",
+            "queue": "https://bszdlg21001.queue.core.windows.net/",
+            "table": "https://bszdlg21001.table.core.windows.net/",
+            "file": "https://bszdlg21001.file.core.windows.net/"
+        },
+        "primaryLocation": "uksouth",
+        "statusOfPrimary": "available",
+        "secondaryLocation": "ukwest",
+        "statusOfSecondary": "available",
+        "secondaryEndpoints": {
+            "dfs": "https://bszdlg21001-secondary.dfs.core.windows.net/",
+            "web": "https://bszdlg21001-secondary.z33.web.core.windows.net/",
+            "blob": "https://bszdlg21001-secondary.blob.core.windows.net/",
+            "queue": "https://bszdlg21001-secondary.queue.core.windows.net/",
+            "table": "https://bszdlg21001-secondary.table.core.windows.net/"
+        }
+    }
+}

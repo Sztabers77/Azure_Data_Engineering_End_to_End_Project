@@ -1,0 +1,41 @@
+{
+    "id": "/subscriptions/8df0c77c-b3f2-4e67-bd21-a32507f1ef1e/resourceGroups/GZ1/providers/Microsoft.KeyVault/vaults/BSZKV1001",
+    "name": "BSZKV1001",
+    "type": "Microsoft.KeyVault/vaults",
+    "location": "eastus",
+    "tags": {},
+    "properties": {
+        "sku": {
+            "family": "A",
+            "name": "Standard"
+        },
+        "tenantId": "53a92c1f-9694-44d5-bbcc-6b5e14c90cdb",
+        "accessPolicies": [
+            {
+                "tenantId": "53a92c1f-9694-44d5-bbcc-6b5e14c90cdb",
+                "objectId": "80e6af94-c0d6-4d5f-a40b-a69d5ea391cb",
+                "permissions": {
+                    "keys": [],
+                    "secrets": [
+                        "Get",
+                        "List",
+                        "Set",
+                        "Delete",
+                        "Recover",
+                        "Backup",
+                        "Restore"
+                    ],
+                    "certificates": []
+                }
+            }
+        ],
+        "enabledForDeployment": false,
+        "enabledForDiskEncryption": false,
+        "enabledForTemplateDeployment": false,
+        "enableSoftDelete": true,
+        "softDeleteRetentionInDays": 90,
+        "enableRbacAuthorization": false,
+        "vaultUri": "https://bszkv1001.vault.azure.net/",
+        "provisioningState": "Succeeded"
+    }
+}

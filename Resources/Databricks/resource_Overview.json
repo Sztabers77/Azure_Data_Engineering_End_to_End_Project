@@ -1,0 +1,74 @@
+{
+    "properties": {
+        "managedResourceGroupId": "/subscriptions/8df0c77c-b3f2-4e67-bd21-a32507f1ef1e/resourceGroups/ZGZ1",
+        "parameters": {
+            "enableFedRampCertification": {
+                "type": "Bool",
+                "value": false
+            },
+            "enableNoPublicIp": {
+                "type": "Bool",
+                "value": false
+            },
+            "prepareEncryption": {
+                "type": "Bool",
+                "value": false
+            },
+            "publicIpName": {
+                "type": "String",
+                "value": "nat-gw-public-ip"
+            },
+            "requireInfrastructureEncryption": {
+                "type": "Bool",
+                "value": false
+            },
+            "resourceTags": {
+                "type": "Object",
+                "value": {
+                    "application": "databricks",
+                    "databricks-environment": "true"
+                }
+            },
+            "storageAccountName": {
+                "type": "String",
+                "value": "dbstoragepb4zgonusuk4o"
+            },
+            "storageAccountSkuName": {
+                "type": "String",
+                "value": "Standard_GRS"
+            },
+            "vnetAddressPrefix": {
+                "type": "String",
+                "value": "10.139"
+            }
+        },
+        "provisioningState": "Succeeded",
+        "authorizations": [
+            {
+                "principalId": "9a74af6f-d153-4348-988a-e2672920bee9",
+                "roleDefinitionId": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
+            }
+        ],
+        "createdBy": {
+            "oid": "f11e5227-4a81-4d79-9942-0976f45b7cda",
+            "puid": "00037FFE3F141037",
+            "applicationId": "c44b4083-3bb0-49c1-b47d-974e53cbdf3c"
+        },
+        "updatedBy": {
+            "oid": "f11e5227-4a81-4d79-9942-0976f45b7cda",
+            "puid": "00037FFE3F141037",
+            "applicationId": "c44b4083-3bb0-49c1-b47d-974e53cbdf3c"
+        },
+        "workspaceId": "7878693584529484",
+        "workspaceUrl": "adb-7878693584529484.4.azuredatabricks.net",
+        "createdDateTime": "2024-01-15T17:29:39.7645478Z"
+    },
+    "id": "/subscriptions/8df0c77c-b3f2-4e67-bd21-a32507f1ef1e/resourceGroups/GZ1/providers/Microsoft.Databricks/workspaces/BSZDB1001",
+    "name": "BSZDB1001",
+    "type": "Microsoft.Databricks/workspaces",
+    "sku": {
+        "name": "premium"
+    },
+    "location": "eastus",
+    "tags": {}
+}
