@@ -1,0 +1,17 @@
+{
+	"name": "sp_CreateSQLServerlessView_gold",
+	"properties": {
+		"content": {
+			"query": "CREATE PROCEDURE CreateSQLServerlessView_gold\n    @ViewName NVARCHAR(100)\nAS\nBEGIN\n    DECLARE @statement NVARCHAR(MAX);\n\n    SET @statement = \n        N'CREATE VIEW ' + @ViewName + ' AS \n        SELECT *\n        FROM\n            OPENROWSET(\n                BULK ''https://bszdlg21001.dfs.core.windows.net/gold/SalesLT/' + @ViewName + '/'',\n                FORMAT = ''DELTA''\n            ) AS [result] ';\n\n    EXEC (@statement);\nEND;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "gold_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
