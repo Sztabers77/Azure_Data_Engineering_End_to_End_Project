@@ -30,7 +30,7 @@
      ![selfhostedinstallfinished](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/9e60328e-276d-4944-8675-8c8415467fa9)
 
 
-   - In the same Manage tab click on 'Linked Service' and create all Linked Services needed in our pipeline - for Databricks Linked Service we'll need a token generated with this instructions - https://docs.databricks.com/en/dev-tools/auth/pat.html#:~:text=In%20your%20Databricks%20workspace%2C%20click,Click%20Generate%20new%20token. and stored in the Key Vault as you could see in the previous screenshot (dbwtoken):
+   - In the same Manage tab click on 'Linked Service' and create all Linked Services needed in our pipeline - for Databricks Linked Service we'll need a token generated according to this instruction - https://docs.databricks.com/en/dev-tools/auth/pat.html#:~:text=In%20your%20Databricks%20workspace%2C%20click,Click%20Generate%20new%20token. and stored in the Key Vault as you could see in the previous screenshot (dbwtoken):
   
      ![Azure Databricks linked service1](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/16ec2f81-8e1d-4011-89e0-63183dd818ac)
      ![Azure databricks linked service2](https://github.com/Sztabers77/Azure_Data_Engineering_End_to_End_Project/assets/155321276/c90e4455-d639-40e8-ba2b-61a41273806f)
@@ -142,14 +142,35 @@
      ![pbi4](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/3d34f8c3-f896-45bf-a624-2f18b8f056e3)
      ![pbi5](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/d7c6da80-4335-4783-a0b8-ebb24063470c)
 
-- After the data load create your custom report using charts, DAX and M languages:
+   - After the data load create your custom report using charts, DAX and M languages:
 
      ![pbi6](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/373aa491-5fb8-43eb-b009-aab3cd77e504)
 
 
 # 9. Testing:
 
-   - 
+   - Go to the SSMS and add new row/rows to one of the tables. In my case it is Customer table:
+
+     ![test6](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/e293e01a-b9cd-4080-84f8-6faeb4ef308d)
+
+   - Run the pipeline by Debug or Trigger buttons and go to the Monitor tab to observe the result:
+
+     ![test11](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/646cdbda-eeff-4d5c-97d3-2c170328b98c)
+
+   - After successfull run go to the Power Bi and refresh your report, in my case I'm checking if number of total customers gonna change from 847 to 848:
+
+     ![test13](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/e3c60aca-c30b-4d34-968b-56bef18daa1d)
+     ![test12](https://github.com/Sztabers77/Azure_Data_Engineering_Project/assets/155321276/0918a361-4068-4b95-834a-7b3c14338454)
+
+   - As you see the number changed so our ETL process works fine.
+
+
+
+
+
+     
+
+
 
 
      
